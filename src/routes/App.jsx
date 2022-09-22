@@ -11,12 +11,16 @@ import Orders from '@pages/Orders';
 
 import NotFound from '@pages/NotFound';
 import '@styles/global.css'
+import AppContext from '@context/AppContext.js';
 import React from 'react';  //importamos el dom de react
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import useInitialState from '@hooks/useInitialState'
 
 
-const App = () => {         //creamos el element
+const App = () => {  //creamos el element
+    const initialState =  useInitialState();   
     return (
+        <AppContext.Provider value={initialState}>
         <BrowserRouter>
             <Layout>
                 <Routes>
@@ -34,7 +38,7 @@ const App = () => {         //creamos el element
                 </Routes>
             </Layout>
         </BrowserRouter> 
-    
+        </AppContext.Provider>
     );
 };
     
