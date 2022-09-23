@@ -22,7 +22,7 @@ const App = () => {  //creamos el element
     return (
         <div>
         <AppContext.Provider value={initialState}>
-        <BrowserRouter basename="/curso-practico-react01">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Layout>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
