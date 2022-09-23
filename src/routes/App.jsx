@@ -21,7 +21,7 @@ const App = () => {  //creamos el element
     const initialState =  useInitialState();   
     return (
         <AppContext.Provider value={initialState}>
-        <BrowserRouter>
+        <BrowserRouter >
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
