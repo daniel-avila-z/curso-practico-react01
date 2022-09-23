@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: 'bundle.js',
-    publicPath: "./",
+    publicPath: "/",
     clean: true,
   },
   devtool: "source-map", // para que no salga una advertencia en la consola de google
