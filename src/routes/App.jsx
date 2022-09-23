@@ -22,10 +22,10 @@ const App = () => {  //creamos el element
     return (
         <div>
         <AppContext.Provider value={initialState}>
-        <BrowserRouter basename='/curso-practico-react01'>
+        <BrowserRouter Basename='/curso-practico-react01'>
             <Layout>
                 <Routes>
-                    <Route exact path="/curso-practico-react01" element={<Home />} />
+                    <Route exact path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />			
                     <Route path="/password-recovery" element={<PasswordRecovery />} />
                     <Route path="/send-email" element={<SendEmail />} />
