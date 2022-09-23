@@ -3,8 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const WebpackDevServer = require('webpack-dev-server');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js', //El archivo fuente que se va ir a produccion
@@ -75,13 +75,13 @@ module.exports = {
             filename: '[name].css'
         }),
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-          new CssMinimizerPlugin(),
-          new TerserPlugin(),
-        ]
-      }
+    // optimization: {
+    //     minimize: true,
+    //     minimizer: [
+    //       new CssMinimizerPlugin(),
+    //       new TerserPlugin(),
+    //     ]
+    //   }
     
 }
 
