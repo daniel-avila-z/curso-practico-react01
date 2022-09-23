@@ -21,11 +21,10 @@ const App = () => {  //creamos el element
     const initialState =  useInitialState();   
     return (
         <AppContext.Provider value={initialState}>
-        <BrowserRouter>
-        <HashRouter basename="/">
+        <BrowserRouter basename='/'>
             <Layout>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route exact path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />			
                     <Route path="/password-recovery" element={<PasswordRecovery />} />
                     <Route path="/send-email" element={<SendEmail />} />
@@ -38,7 +37,6 @@ const App = () => {  //creamos el element
 
                 </Routes>
             </Layout>
-            </HashRouter>
         </BrowserRouter> 
         </AppContext.Provider>
     );
