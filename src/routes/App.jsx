@@ -20,11 +20,12 @@ import useInitialState from '@hooks/useInitialState'
 const App = () => {  //creamos el element
     const initialState =  useInitialState();   
     return (
+        <div>
         <AppContext.Provider value={initialState}>
-        <BrowserRouter basename='/'>
+        <BrowserRouter basename='/curso-practico-react01'>
             <Layout>
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
+                    <Route exact path="/curso-practico-react01" element={<Home />} />
                     <Route path="/login" element={<Login />} />			
                     <Route path="/password-recovery" element={<PasswordRecovery />} />
                     <Route path="/send-email" element={<SendEmail />} />
@@ -39,6 +40,7 @@ const App = () => {  //creamos el element
             </Layout>
         </BrowserRouter> 
         </AppContext.Provider>
+        </div>
     );
 };
     
