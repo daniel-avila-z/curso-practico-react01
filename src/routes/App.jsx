@@ -24,7 +24,7 @@ const App = () => {  //creamos el element
         <AppContext.Provider value={initialState}>
         <BrowserRouter  basename={window.location.pathname || ''}>
             <Layout>
-                <Switch>  
+                <Routes>  
                     <Route exact path="/" element={Home} />
                     <Route exact path="/login" element={Login} />			
                     <Route exact path="/password-recovery" element={<PasswordRecovery />} />
@@ -36,7 +36,7 @@ const App = () => {  //creamos el element
                     <Route path="/orders" element={<Orders/>} />
                     <Route path="*" element={<NotFound />} />
 
-                </Switch>
+                </Routes>
             </Layout>
         </BrowserRouter> 
         </AppContext.Provider>
