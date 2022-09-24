@@ -74,6 +74,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css'
         }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+          })
     ],
     // optimization: {
     //     minimize: true,
