@@ -13,7 +13,7 @@ import NotFound from '@pages/NotFound';
 import '@styles/global.css'
 import AppContext from '@context/AppContext.js';
 import React from 'react';  //importamos el dom de react
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
 import useInitialState from '@hooks/useInitialState'
 
 
@@ -24,7 +24,7 @@ const App = () => {  //creamos el element
         <AppContext.Provider value={initialState}>
         <BrowserRouter  basename={window.location.pathname || ''}>
             <Layout>
-                <Routes>  
+                <Switch>  
                     <Route exact path="/" element={Home} />
                     <Route exact path="/login" element={Login} />			
                     <Route exact path="/password-recovery" element={<PasswordRecovery />} />
@@ -36,7 +36,7 @@ const App = () => {  //creamos el element
                     <Route path="/orders" element={<Orders/>} />
                     <Route path="*" element={<NotFound />} />
 
-                </Routes>
+                </Switch>
             </Layout>
         </BrowserRouter> 
         </AppContext.Provider>
