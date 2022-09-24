@@ -25,8 +25,8 @@ const App = () => {  //creamos el element
         <BrowserRouter  basename={window.location.pathname || ''}>
             <Layout>
                 <Routes>  
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/login" element={<Login />} />			
+                    <Route exact path="/" element={Home} />
+                    <Route exact path="/login" element={Login} />			
                     <Route exact path="/password-recovery" element={<PasswordRecovery />} />
                     <Route path="/send-email" element={<SendEmail />} />
                     <Route path="/new-password" element={<NewPassword />} />
