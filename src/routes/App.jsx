@@ -22,12 +22,12 @@ const App = () => {  //creamos el element
     return (
         <div>
         <AppContext.Provider value={initialState}>
-        <BrowserRouter basename={window.location.pathname || ''}>
+        <BrowserRouter  basename={window.location.pathname || ''}>
             <Layout>
-                <Routes>
+                <Routes>  
                     <Route exact path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />			
-                    <Route path="/password-recovery" element={<PasswordRecovery />} />
+                    <Route exact path="/login" element={<Login />} />			
+                    <Route exact path="/password-recovery" element={<PasswordRecovery />} />
                     <Route path="/send-email" element={<SendEmail />} />
                     <Route path="/new-password" element={<NewPassword />} />
                     <Route path="/account" element={<MyAccount/>} />
