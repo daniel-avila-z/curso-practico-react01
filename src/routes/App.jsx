@@ -36,7 +36,7 @@ const App = () => { // creamos el element
   return (
     <AppContext.Provider value={initialState}>
       <Layout>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} basename={process.env.PUBLIC_URL} />
 
       </Layout>
     </AppContext.Provider>
