@@ -4,12 +4,15 @@ import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
-  Route
+  Route,
+  BrowserRouter
 } from 'react-router-dom'
 import { App, router } from '@routes/App'
 
 ReactDOM.createRoot(document.getElementById('app')).render(
-  <App />
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <App />
+  </BrowserRouter>
 )
 
 // import React from 'react'

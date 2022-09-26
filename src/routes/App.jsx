@@ -25,18 +25,17 @@ const App = () => { // creamos el element
   // eslint-disable-next-line no-unused-vars
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <>
-        <Route path='/' element={<Home />} />
+      <Route path='/' element={<Home />}>
         <Route path='login' element={<Login />} />
         <Route path='password-recovery' element={<PasswordRecovery />} />
-      </>
+      </Route>
     )
   )
 
   return (
     <AppContext.Provider value={initialState}>
       <Layout>
-        <RouterProvider router={router} basename={process.env.PUBLIC_URL} />
+        <RouterProvider router={router} />
 
       </Layout>
     </AppContext.Provider>
