@@ -14,35 +14,56 @@ import '@styles/global.css'
 import AppContext from '@context/AppContext.js'
 import React from 'react' // importamos el dom de react
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom'
+import ReactDom from 'react-dom'
+// eslint-disable-next-line no-unused-vars
+import { BrowserRouter, Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import useInitialState from '@hooks/useInitialState'
 
 const App = () => { // creamos el element
   const initialState = useInitialState()
+
+  // eslint-disable-next-line no-unused-vars
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path='/' element={<Home />} />
+        <Route path='login' element={<Login />} />
+        <Route path='password-recovery' element={<PasswordRecovery />} />
+      </>
+    )
+  )
+
   return (
     <AppContext.Provider value={initialState}>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route exact path='/password-recovery' element={<PasswordRecovery />} />
-            <Route path='/send-email' element={<SendEmail />} />
-            <Route path='/new-password' element={<NewPassword />} />
-            <Route path='/account' element={<MyAccount />} />
-            <Route path='/signup' element={<CreateAccount />} />
-            <Route path='/checkout' element={<Checkout />} />
-            <Route path='/orders' element={<Orders />} />
-            <Route path='*' element={<NotFound />} />
+      <Layout>
+        <RouterProvider router={router} />
 
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      </Layout>
     </AppContext.Provider>
   )
 }
 
-export default App // exportamos
+export { App } // exportamos
+
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+// } from "react-router-dom";
+
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path="/" element={<Root />}>
+//       <Route path="dashboard" element={<Dashboard />} />
+//       {/* ... etc. */}
+//     </Route>
+//   )
+// );
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <RouterProvider router={router} />
+//   </React.StrictMode>
+// );
 
 /* <Layout>
 {/* login se cierra ya que no va a contener otro componete, como si lo hace layout */
