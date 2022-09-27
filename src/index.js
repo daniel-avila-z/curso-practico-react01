@@ -1,18 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  BrowserRouter
+  BrowserRouter,
+  HashRouter
 } from 'react-router-dom'
 import { App, router } from '@routes/App'
 
 ReactDOM.createRoot(document.getElementById('app')).render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <StrictMode>
     <App />
-  </BrowserRouter>
+  </StrictMode>
 )
 
 // import React from 'react'

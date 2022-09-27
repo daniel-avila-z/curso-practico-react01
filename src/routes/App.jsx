@@ -25,10 +25,11 @@ const App = () => { // creamos el element
   // eslint-disable-next-line no-unused-vars
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<Home />}>
-        <Route path='login' element={<Login />} />
-        <Route path='password-recovery' element={<PasswordRecovery />} />
-      </Route>
+      <>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/password-recovery' element={<PasswordRecovery />} />
+      </>
     )
   )
 
