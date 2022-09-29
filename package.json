@@ -1,8 +1,8 @@
 {
-  "homepage": "https://daniel-avilaxd.github.io/curso-practico-react01",
   "name": "curso-practico-react01",
   "version": "1.0.0",
-  "private": false,
+  "homepage": "https://daniel-avilaxd.github.io/curso-react",
+  "private": true,
   "description": "Empty project.",
   "main": "src/index.js",
   "keywords": [],
@@ -43,6 +43,8 @@
     "terser-webpack-plugin": "^5.3.6"
   },
   "eslintConfig": {
-    "extends": ["./node_modules/standard/eslintrc.json"]
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
   }
 }
